@@ -156,11 +156,82 @@ nav a:hover {
     left: 0;
 }
 
+/* Sección de proyectos */
+.projects {
+    padding: 2rem;
+    background: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-content {
+    padding: 1rem;
+}
+
+.project-content img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin: 1rem auto;
+    display: block;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-tech {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background: var(--primary);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.demo-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+
+.demo-btn:hover {
+    opacity: 0.9;
+}
+
 /* Sección de contacto */
 .contact {
-    padding: 6rem 2rem;
+    padding: 2rem;
     text-align: center;
-    background-color: #f8f9fa;
 }
 
 .contact h2 {

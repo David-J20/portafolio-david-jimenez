@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Jiménez - Ingeniero & Estudiante</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -12,6 +13,7 @@
             <ul>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -59,6 +61,53 @@
                         <li>Postman</li>
                         <li>Fulcro</li>
                     </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <article class="project-card" data-tech="java">
+                    <h3>Minesweeper</h3>
+                    <div class="project-content">
+                        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/java/java.png" alt="Minesweeper Project">
+                        <p>Implementación del clásico juego Buscaminas en Java</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Swing</span>
+                            <span class="tech-tag">OOP</span>
+                        </div>
+                        <button class="demo-btn" onclick="mostrarDemo('minesweeper')">Ver Demo</button>
+                    </div>
+                </article>
+
+                <article class="project-card" data-tech="clojure">
+                    <h3>Todo List</h3>
+                    <div class="project-content">
+                        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/clojure/clojure.png" alt="Todo List Project">
+                        <p>Aplicación de lista de tareas desarrollada en Clojure</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Clojure</span>
+                            <span class="tech-tag">Reagent</span>
+                            <span class="tech-tag">Functional</span>
+                        </div>
+                        <button class="demo-btn" onclick="mostrarDemo('todolist')">Ver Demo</button>
+                    </div>
+                </article>
+
+                <article class="project-card" data-tech="javascript">
+                    <h3>Portfolio Interactivo</h3>
+                    <div class="project-content">
+                        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="Portfolio Project">
+                        <p>Esta página web con sistema de logros y animaciones</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <button class="demo-btn" onclick="mostrarDemo('portfolio')">Ver Demo</button>
+                    </div>
                 </article>
             </div>
         </section>
