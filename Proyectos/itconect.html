@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Connect - Proyecto</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .project-detail {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html#sobre-mi">Sobre Mí</a></li>
+                <li><a href="../index.html#habilidades">Habilidades</a></li>
+                <li><a href="../index.html#proyectos">Proyectos</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <a href="../index.html#proyectos" class="back-button">← Volver a Proyectos</a>
+            
+            <h1>IT Connect</h1>
+            <p><strong>Descripción:</strong> Red profesional para conectar expertos en tecnología. Facilita colaboración, networking y oportunidades de desarrollo.</p>
+            
+            <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Networking</span>
+            </div>
+
+            <h2>Galería del Proyecto</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="../img/proyectos/itconect/drive-download-20251129T172634Z-1-001/Captura de pantalla 2025-11-29 a la(s) 12.06.08 p.m..png" alt="IT Connect - Vista 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="../img/proyectos/itconect/drive-download-20251129T172634Z-1-001/Captura de pantalla 2025-11-29 a la(s) 12.06.45 p.m..png" alt="IT Connect - Vista 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="../img/proyectos/itconect/drive-download-20251129T172634Z-1-001/Captura de pantalla 2025-11-29 a la(s) 12.11.32 p.m..png" alt="IT Connect - Vista 3">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 David Jiménez - Estudiante Universidad EAN</p>
+    </footer>
+</body>
+</html>
