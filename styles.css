@@ -51,13 +51,17 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative; /* contexto para centrar el ul */
 }
 
+/* Centrar el menú principal en pantallas amplias */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav a {
