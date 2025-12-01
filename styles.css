@@ -230,6 +230,23 @@ html {
     }
 }
 
+/* Evitar que el botón de volver quede oculto por el header */
+.project-detail .back-button {
+    position: relative;
+    z-index: 10; /* encima del contenido pero debajo del header */
+    display: inline-block;
+    margin-top: calc(var(--header-height) + 0.75rem);
+}
+
+/* Ajuste fino en pantallas pequeñas */
+@media (max-width: 480px) {
+    .project-detail .back-button {
+        margin-top: calc(var(--header-height) + 0.5rem);
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
