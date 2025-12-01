@@ -44,4 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarPagina();
     agregarAnimaciones();
     agregarEfectosProyectos();
+    activarMenuMovil();
 });
+
+// Funcionalidad del menú móvil
+function activarMenuMovil() {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+
+    const toggle = document.createElement('button');
+    toggle.className = 'menu-toggle';
+    toggle.setAttribute('aria-label', 'Abrir menú');
+    toggle.innerHTML = '☰';
+    nav.insertBefore(toggle, nav.firstChild);
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+    });
+
+    // cerrar menú al clicar un enlace (útil en móvil)
+    nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            nav.classList.remove('nav-open');
+        });
+    });
+}

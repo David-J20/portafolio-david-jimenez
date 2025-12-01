@@ -21,22 +21,43 @@ body {
 }
 
 /* Header y navegación */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #4a90e2;
+    --text-color: #333333;
+    --light-bg: #ffffff;
+    --gray: #666666;
+    --header-height: 72px; /* altura por defecto del header */
+}
+
 header {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    height: var(--header-height);
+    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 nav a {
@@ -55,12 +76,12 @@ nav a:hover {
 
 /* Sección Hero */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: calc(var(--header-height) + 2rem) 2rem 2rem 2rem;
     background-color: #f8f9fa;
 }
 
@@ -158,8 +179,55 @@ nav a:hover {
 
 /* Sección de proyectos */
 .projects {
-    padding: 2rem;
+    padding: calc(var(--header-height) + 2rem) 2rem 2rem 2rem;
     background: white;
+}
+
+/* Ajustes para que los anclas no queden ocultos detrás del header */
+html {
+    scroll-padding-top: calc(var(--header-height) + 12px);
+}
+
+/* Menú hamburguesa móvil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.98);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        display: none;
+        align-items: center;
+    }
+
+    nav.nav-open ul {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .hero {
+        padding-top: calc(var(--header-height) + 1.5rem);
+    }
 }
 
 .section-header {
