@@ -59,13 +59,15 @@ function activarMenuMovil() {
     nav.insertBefore(toggle, nav.firstChild);
 
     toggle.addEventListener('click', () => {
-        nav.classList.toggle('nav-open');
+        const opened = nav.classList.toggle('nav-open');
+        document.body.classList.toggle('no-scroll', opened);
     });
 
     // cerrar menú al clicar un enlace (útil en móvil)
     nav.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             nav.classList.remove('nav-open');
+            document.body.classList.remove('no-scroll');
         });
     });
 }
