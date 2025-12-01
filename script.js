@@ -69,3 +69,51 @@ function activarMenuMovil() {
         });
     });
 }
+
+/* Lightbox: abrir imagen en modal y opción de abrir en nueva pestaña */
+function initLightbox() {
+    const overlay = document.getElementById('lb-overlay');
+    const imgEl = document.getElementById('lb-img');
+    const caption = document.getElementById('lb-caption');
+    const closeBtn = document.getElementById('lb-close');
+    const newTab = document.getElementById('lb-newtab');
+
+    if (!overlay) return;
+
+    function openLightbox(src, alt) {
+        imgEl.src = src;
+        imgEl.alt = alt || '';
+        caption.textContent = alt || '';
+        newTab.href = src;
+        overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
+        imgEl.src = '';
+        caption.textContent = '';
+    }
+
+    // abrir al hacer click en miniaturas
+    document.querySelectorAll('.gallery-item img, .project-content img').forEach(img => {
+        img.addEventListener('click', (e) => {
+            openLightbox(img.src, img.alt);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // initLightbox se inicializa después de la carga del DOM
+    initLightbox();
+});
